@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/splitting.min.js"></script>
+    <script src="js/plugin/jquery.simplyscroll.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        
+        <!-- nav -->
+        <header>
+            <div class="container">
+                <div class="innerheader">
+                    <div class="logo">Yoon Seo Park</div>
+                    <nav>
+                        <ul class="nav-menu">
+                            <li><a href="#main">Main</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#worklist">Worklist</a></li>
+                            <li><a href="#process">Process</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <div class="portfolio-text">Portfolio</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- visual -->
+        <section class="visual">
+            <div class="inner">
+                <div class="main-text">
+                    <h1 class="main-title en1">
+                        See Beyond<br>
+                        <span class="highlight">NARRATIVE</span>
+                    </h1>
+                    <p class="subtitle">
+                        Crafting better experiences through details that often go unseen —
+                    </p>
+                    <p class="designer-info">
+                        I'm Yoonseo Park, web designer.
+                    </p>
+                </div>
+
+                <!-- 하단 텍스트 -->
+                <div class="bottom-text">
+                    <div class="bottom-left">
+                        (A visual language shaped<br>
+                        by thought and emotion)
+                    </div>
+                    <div class="bottom-right">
+                        (A visual language shaped<br>
+                        by thought and emotion)
+                    </div>
+                </div>
+            </div> 
+        </section>
+
+        <!-- black bg 크레딧 -->
+        <!-- <section class="credit">
+            <div class="container">
+                <h1 class="credit-title en1">
+                    See Beyond<br>
+                    <span class="highlight">NARRATIVE</span>
+                </h1>
+            </div>
+            <div class="view-more">View More</div>
+        </section> -->
+
+        <!-- 가로 스크롤 start-->
+        <div class="scroll-container" id="scrollContainer">
+            <!-- SECTION 1: intro Main -->
+            <section class="intro-main page">
+                <div class="inner">
+                    <div class="main-container">
+                        <div class="text-box">
+                            <div class="title">
+                                <h2 class="en2">Hi My Name Is<br /></h2>
+                                <h2 class="en2"><span class="en5">Y</span>oonseo Park</h2>
+                            </div>
+                            <img src="img/light1.png" alt="">
+                            <div class="desc">
+                                안녕하십니까,<br /><br />
+                                사용자와의 소통을 가장 중요하게 생각하며,<br />
+                                감정의 흐름과 시선의 리듬을 설계하는 디자이너 박윤서입니다.<br /><br />
+                                단순히 보기 좋은 화면이 아니라,<br />
+                                이해되고 공감되는 구조와 경험을 만들기 위해 고민합니다.<br /><br />
+                                시각적인 조형 너머에 담긴 의미,<br>
+                                그리고 그것을 사용하는 사람의 입장에서 끊임없이 묻고 또 설계합니다.<br /><br />
+                                이 믿음을 기반으로, 저만의 시선과 감각을 풀어낸 프로젝트들을 소개합니다.
+                            </div>
+                        </div>
+                        <div class="img-box">
+                            <img src="img/test.png" alt="about main image">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: intro Sub 1 -->
+            <section class="intro-sub1 page">
+                <div class="inner">
+                    <div class="sub1-container">
+                        <div class="images">
+                            <img src="img/test1.png" class="img1" alt="">
+                            <img src="img/test2.png" class="img2" alt="">
+                            <!-- <img src="img/test3.png" class="img3" alt=""> -->
+                        </div>
+                        <div class="text-box">
+                            <div class="title">
+                                <h2 class="en2">The Shift<br /></h2>
+                                <h2 class="en2"><span class="en5">T</span>hat Shaped Me</h2>
+                            </div>
+                            <div class="desc">
+                                항공호텔서비스를 전공하고 다양한 고객을 직접 마주하며,<br />
+                                ‘좋은 경험’이란 감정의 흐름과 섬세한 디테일에서 비롯된다는 것을 배웠습니다.<br /><br />
+                                단순한 응대를 넘어, 사용자의 입장에서 더 나은 흐름을 설계하고 싶다는 갈증이 생겼고,<br />
+                                그 고민은 디자인이라는 영역으로 자연스럽게 이어졌습니다.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: intro Sub 2 -->
+            <section class="intro-sub2 page">
+                <div class="inner">
+                    <div class="sub2-container">
+                        <div class="text-box">
+                            <div class="title">
+                                <h2 class="en2">In the Making:<br /></h2>
+                                <h2 class="en2">A <span class="en5">D</span>esigner's Path</h2>
+                            </div>
+                            <div class="desc">
+                                <p>직접 사용자와 마주했던 경험을 바탕으로, 이제는 그 경험이 디자인이라는 새로운 도구로 이어져, <br>
+                                사용자 경험을 더욱 깊이 있게 들여다보고자 합니다.<br /><br />
+                                단순한 조형이나 표현을 넘어서 '왜'라는 질문에 답할 수 있는 사용자 중심의 사고를 담은<br> 디자인을 만들고자 합니다. 그 시작점에 놓인 저의 프로젝트들을 소개합니다.</p>
+                            </div>
+                        </div>
+                        <div class="img-box">
+                            <img src="img/about_3.png" alt="">
+                            <img src="img/about_3-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- 가로스크롤 종료 -->
+        
+        <!-- About Section -->
+        <!-- <section class="about-main">
+            <div class="inner">
+                <div class="about-container">
+                    <div class="leftBox">
+                        <img src="img/Main-Profile.jpg" alt="">
+                    </div>
+                    <div class="rightBox">
+                        <div class="textbox">
+                            <h2 class="about-title">진심을 담아 연결하고,<br>감정을 설계하는 ㅡ 디자이너 박윤서입니다</h2>
+                            <p class="about-subtitle">저의 이름 뜻처럼, ‘진실되고, 서로를 잇는 디자이너’가 되고자 합니다. <br>
+                            ‘진심은 전해진다’는 믿음 아래, 보는 이의 감정에 닿는 디자인을 추구합니다. 흐름이 자연스럽고 정보가 명확하며, <br>
+                            감성이 설계된 디자인을 만들기 위해 사용자의 입장에서 사고하고, 팀과 함께 소통하며 성장해왔습니다.</p>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </section> -->
+
+        <section class="about-main">
+            <div class="inner">
+                <div class="about-container">
+                    <div class="leftBox">
+                        <img src="img/Main-Profile.jpg" alt="">
+                    </div>
+
+                    <div class="rightBox">
+                        <div class="section-number">01 — About</div>
+                        
+                        <h1 class="main-title">
+                            진심을 담아 <em class="title-emphasis">연결</em>하고,<br>
+                            경험을 설계하는 ㅡ 디자이너 박윤서
+                        </h1>
+                        
+                        <p class="subtitle">
+                            저의 이름 뜻처럼, '진실되고, 서로를 잇는 디자이너'가 되고자 합니다.
+                        </p>
+                        
+                        <div class="divider"></div>
+                        
+                        <div class="description">
+                            <span class="quote">'진심은 전해진다'</span>는 믿음 아래, 보는 이의 감정에 닿는 디자인을 추구합니다. <br>
+                            흐름이 자연스럽고 정보가 명확하며, 감성이 설계된 디자인을 만들기 위해 사용자의 <br>입장에서 사고하고 팀과 함께 소통하며 성장해왔습니다.
+                        </div>
+
+                        <div class="details">
+                            <div class="detail-item">
+                                <div class="detail-label">Experience</div>
+                                <div class="detail-value">6 Months</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Focus</div>
+                                <div class="detail-value">UX/UI Design</div>
+                            </div>
+                            <div class="detail-item">
+                                <div class="detail-label">Location</div>
+                                <div class="detail-value">Seoul, Korea</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about-sub">
+            <div class="inner">
+                <div class="about-container2">
+                    <div class="leftBox">
+                        <p class="title en2">(What I Have)</p>
+                    </div>
+                    <div class="rightBox">
+                    <!-- PROFILE -->
+                        <div class="info-group">
+                            <h3 class="info-title en2">(PROFILE)</h3>
+                            <div class="profile grid">
+                                <div class="profile-txtBox">
+                                    <span class="profile-left">박윤서 / Park Yoon Seo</span>
+                                    <span class="profile-right">E. 03yoonseo@naver.com</span>
+                                </div>
+                                <div class="profile-txtBox">
+                                    <span class="profile-left">2003. 11. 17</span>
+                                    <span class="profile-right">T. 010-6438-8543</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- LICENSE -->
+                        <div class="info-group">
+                            <h3 class="info-title en2">(LICENSE)</h3>
+                            <div class="license grid">
+                                <div class="license-txtBox">
+                                    <span class="license-left">2024 ITQ OA MASTR</span>
+                                    <span class="license-right">2023 ROOM MANAGEMENT SERVICE</span>
+                                </div>
+                                <div class="license-txtBox">
+                                    <span class="license-left">2023 WINE SOMMELIER KTSEC</span>
+                                    <span class="license-right">2022 운전 면허 보통 2종</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- WORK -->
+                        <div class="info-group">
+                            <h3 class="info-title en2">(WORK)</h3>
+                            <div class="work-list">
+                                <div class="work-txtBox">
+                                    <span class="year">2024~2025</span>
+                                    <span class="company">주식회사 아이윌아이엔씨</span>
+                                </div>
+                                <div class="work-txtBox">
+                                    <span class="year">2023~2024</span>
+                                    <span class="company">노보텔 앰버서더 서울 동대문 호텔 앤 레지던스</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- EDUCATION -->
+                        <div class="info-group">
+                            <h3 class="info-title en2">(EDUCATION)</h3>
+                            <div class="education-list">
+                                <div class="education-txtBox">
+                                    <span class="year">2025</span>
+                                    <span class="school">강남 이젠DX센터 UI/UX & 프론트엔드 이수</span>
+                                </div>
+                                <div class="education-txtBox">
+                                    <span class="year">2024</span>
+                                    <span class="school">한림성심대학교 항공호텔서비스과 졸업</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SKILL -->
+                        <div class="info-group">
+                            <h3 class="info-title en2">(SKILL)</h3>
+                            <div class="skills-section">
+                                <div class="skill-group">
+                                    <span class="skill-category">Design</span>
+                                    <div class="skill-lists">
+                                        <span class="skill-list">Photoshop</span>
+                                        <span class="skill-list">Illustration</span>
+                                        <span class="skill-list">Figma</span>
+                                    </div>
+                                </div>
+                                <div class="skill-group">
+                                    <span class="skill-category">Development</span>
+                                    <div class="skill-lists">
+                                        <span class="skill-list">Html</span>
+                                        <span class="skill-list">Css</span>
+                                        <span class="skill-list">Javascript</span>
+                                        <span class="skill-list">React</span>
+                                        <span class="skill-list">Jquery</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- worklist-intro -->
+        <section class="worklist-intro">
+            <div class="inner">
+                <div class="title en2">
+                    <p class="a">My</p>
+                    <p class="b">Work</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- worklist-Team -->
+        <section class="worklist-team">
+            <div class="inner">
+                <div class="worklist-container">
+                    <div class="content-left">
+                        <span class="project-tag">Team Project</span>
+                        <h2 class="project-title en2">Subway</h2>
+                        <p class="project-desc">
+                            사용자 경험 개선을 목표로, 기존 웹의 복잡한 UI 구조와 비효율적인 플로우를 재설계했습니다. 전체 웹어플리케이션의 인 UI 시안, 브랜드 컬러와 사용성 모두를 고려한 디자인을 구성하였으며, 기획서 작성부터 최종 발표까지 주도적으로 참여하여 팀 내부로 발표를 진행하였습니다.
+                        </p>
+                        
+                        <div class="project-info">
+                            <p>기간 | 2025. 05. 01 - 2025. 06. 31</p>
+                            <p>기여도 | 디자인 60%</p>
+                        </div>
+
+                        <div class="project-list">
+                            <div class="project-item active" data-project="0">
+                                <span class="project-number">01</span>
+                                <span class="project-name">Subway App Renewal</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="project-item" data-project="1">
+                                <span class="project-number">02</span>
+                                <span class="project-name">Tamburins Web Renewal</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                            <div class="project-item" data-project="2">
+                                <span class="project-number">03</span>
+                                <span class="project-name">Fandom App</span>
+                                <div class="progress-bar">
+                                    <div class="progress-fill"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="read-more">Read More</a>
+                    </div>
+
+                    <div class="content-right">
+                        <div class="project-image-container">
+                            <img src="img/Team-Tamburins.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- worklist-Clone -->
+        <section class="worklist-clone">
+            <div class="inner">
+                <div class="headerBox">
+                    <span class="project-tag">My Project</span>
+                    <h2 class="project-title en2">clone coding</h2>
+                    <p class="subtxt">다양한 웹사이트를 직접 분석·구현하며 제작한 클론 코딩 프로젝트입니다.</p>
+                </div>
+            
+                <ul class="worklist-grid">
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work4.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">skinmed</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                    
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work4.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">daehye</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                    
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work4.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">hanwha</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                    
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work1.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">ystudio</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                    
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work1.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">crew a la mode</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                    
+                    <li class="worklist-Box">
+                        <div class="clone-contents">
+                            <img src="img/work1.jpg" alt="skinmed clone">
+                            <div class="item-overlay">
+                                <a href="#" class="read-more-btn">Read More</a>
+                            </div>
+                        </div>
+                        <div class="txtbox">
+                            <h3 class="title">musign</h3>
+                            <p class="description">(웹사이트 설명) UI/UX 클론 코딩</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="hobby">
+            <div class="inner">
+                <div class="text-wrapper">
+                    <h1 class="text-left en2">In Motion,</h1>
+                    <h1 class="text-right en2">A Pause</h1>
+                </div>
+                    <span class="a"><img src="img/MUSIC.jpg" alt=""></span>
+                    <span class="b"><img src="img/GOLF.jpg" alt=""></span>
+                    <span class="c"><img src="img/JEJU.jpg" alt=""></span>
+                    <span class="d"><img src="img/me11.jpg" alt=""></span>
+                    <span class="e"><img src="img/OSAKA.jpg" alt=""></span>
+                    <span class="f"><img src="img/MUSIC.jpg" alt=""></span>
+                    <span class="g"><img src="img/MUSIC.jpg" alt=""></span>
+                    <span class="h"><img src="img/MUSIC.jpg" alt=""></span>
+            </div>
+        </section>
+        
+        <section class="faq-section">
+            <div class="inner">
+                <h2 class="faq-title en2">Questions You May Have</h2>
+                <h3 class="faq-subtxt">제 작업 방식과 생각을 조금 더 쉽게 이해할 수 있도록 답변을 준비했습니다.</h3>
+            
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>디자인할 때 가장 중요하게 생각하는 요소는 무엇인가요?</h3>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>사용자 리서치부터 시작하여 페르소나 설정, 와이어프레임, 프로토타입, 최종 디자인까지 단계적으로 진행합니다. 각 단계마다 클라이언트와 충분한 소통을 통해 방향성을 맞춰가며, 사용자 중심의 디자인을 완성해나갑니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>디자이너로서 본인의 강점은 무엇인가요?</h3>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>프로젝트 규모에 따라 다르지만, 웹사이트의 경우 2-4주, 앱 디자인은 4-8주 정도 소요됩니다. 복잡한 서비스나 브랜딩이 포함된 경우 더 오래 걸릴 수 있으며, 초기 상담을 통해 정확한 일정을 안내해드립니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>팀 프로젝트에서 맡았던 역할과 협업방식이 궁금해요.</h3>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>초기 기획 단계부터 디자인·퍼블리싱까지 전 과정에 참여했습니다. 역할과 일정 관리를 명확히 하여 효율적인 진행이 되도록 하였고 Figma, Git 등 협업 툴을 적극 활용하였습니다. 상호 피드백과 아이디어 공유로 팀 시너지를 극대화하며 성공적으로 프로젝트를 마무리 할 수 있었습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" onclick="toggleFAQ(this)">
+                            <h3>앞으로 어떤 디자이너로 성장하고 싶나요?</h3>
+                            <div class="faq-icon"></div>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-content">
+                                <p>사용자의 감정과 경험을 설계하는 디자이너가 되고 싶습니다. 트렌드에 머무르지 않고 지속 가능한 디자인을 추구합니다. 다양한 분야와의 협업을 통해 시야를 넓히고, 기술과 미감을 아우르는 종합적인 역량을 발전시키겠습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section class="contact">
+            <div class="inner">
+                <!-- 원형 마퀴 -->
+                <div class="rotating-text">
+                    <svg viewBox="0 0 120 120">
+                        <path id="circle-path" d="M 60, 60 m -40, 0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none"/>
+                        <text>
+                            <textPath href="#circle-path">
+                                READ MORE • READ MORE • READ MORE •
+                            </textPath>
+                        </text>
+                    </svg>
+                </div>
+
+
+
+                <!-- Header -->
+                <header class="contact-header">
+                    <div class="tagline">LET'S DO SOMETHING MEANINGFUL TOGETHER</div>
+                    <div class="subtitle">
+                        <p>not just work, but a story</p>
+                        <p>let's begin</p>
+                    </div>
+                </header>
+
+                <!-- Sitemap -->
+                <div class="sitemap">
+                    <div class="sitemap-title">SITEMAP</div>
+                    <div class="sitemap-links">
+                        <a href="#home">HOME</a>
+                        <a href="#process">PROCESS</a>
+                        <a href="#about">ABOUT</a>
+                        <a href="#contact">CONTACT</a>
+                        <a href="#work">WORK</a>
+                    </div>
+                </div>
+
+                <!-- Main Title -->
+                <div class="contact-title">
+                    <div class="text">
+                        <a class="#">Get In Touch</a>
+                    </div>
+                </div>
+                
+
+                <!-- Contact Section -->
+                <div class="contact-Box">
+                    <div class="contact-group">
+                        <div class="contact-label">Name</div>
+                        <div class="contact-info">박윤서 (Park Yoon Seo)</div>
+                    </div>
+
+                    <div class="contact-group">
+                        <div class="contact-label">Tel.</div>
+                        <div class="contact-info">
+                            <a href="tel:010-6438-8543">010 6438 8543</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-group">
+                        <div class="contact-label">Email.</div>
+                        <div class="contact-info">
+                            <a href="mailto:03yoonseo@naver.com">03yoonseo@naver.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-group">
+                        <div class="contact-label">Philosophy</div>
+                        <div class="contact-info">
+                            Design begins with dialogue<br>
+                            Let's connect
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="copyright">© Yoonseo Portfolio 2025</div>
+                    <div class="philosophy">
+                        더 나은 경험을 만드는 웹디자이너가 되겠습니다.
+                    </div>
+                </footer>
+            </div>
+        </section>
+
+    </div>
+</body>
+</html>

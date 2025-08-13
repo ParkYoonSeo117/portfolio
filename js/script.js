@@ -163,21 +163,27 @@ $(function(){
                     desc: '사용자 경험 개선을 목표로, 기존 웹의 복잡한 UI 구조와 비효율적인 플로우를 재설계했습니다. 전체 웹어플리케이션의 인 UI 시안, 브랜드 컬러와 사용성 모두를 고려한 디자인을 구성하였으며, 기획서 작성부터 최종 발표까지 주도적으로 참여하여 팀 내부로 발표를 진행하였습니다.',
                     period: '2025. 05. 01 - 2025. 06. 31',
                     contribution: '디자인 60%',
-                    link: '#subway-project'
+                    link: '#subway-project',
+                    image: 'img/worklist-T_subway1.png',
+                    alignment: 'center'
                 },
                 {
                     title: 'Tamburins',
                     desc: '감각적인 브랜드 이미지에 비해 UI 구성과 사용자 흐름이 제한적이었던 기존 웹사이트를, 감성적 브랜딩은 유지하면서 UX 사용성을 강화하는 방향으로 리디자인하였고, 포토샵과 일러스트레이터 등의 툴을 적극 활용해 일관된 비주얼 아이덴티티와 사용자 친화적인 레이아웃을 구현하였습니다.',
                     period: '2025. 06. 01 - 2025. 06. 30',
                     contribution: '디자인 80%',
-                    link: '#tamburins-project'
+                    link: '#tamburins-project',
+                    image: 'img/worklist-T_tamburins.png',
+                    alignment: 'center'
                 },
                 {
                     title: 'Fandom App',
                     desc: '팬덤 커뮤니티의 니즈를 반영한 모바일 플랫폼 기획 및 UI 설계 프로젝트 입니다. 앱 구조 정의와 메인 사용자 흐름 구성, 스타일 가이드와 화면 시안 제작을 중심으로 참여하였고, 브랜드 무드와 사용자 편의성 모두를 고려한 디자인을 구현하며, 디자인 전담 역할을 수행했습니다.',
                     period: '2025. 07. 01 - 2025. 07. 31',
                     contribution: '디자인 70%',
-                    link: '#fandom-project'
+                    link: '#fandom-project',
+                    image: 'img/worklist-T_fandom1.png',
+                    alignment: 'center'
                 }
             ];
 
@@ -230,10 +236,12 @@ $(function(){
             const descEl = document.querySelector('.project-desc');
             const periodEl = document.querySelector('.project-info p:first-child');
             const contributionEl = document.querySelector('.project-info p:last-child');
+            const imageEl = document.querySelector('.project-image-container img'); 
             
             // 부드러운 전환 효과
             titleEl.style.opacity = '0';
             descEl.style.opacity = '0';
+            imageEl.style.opacity = '0';
             
             setTimeout(() => {
                 titleEl.textContent = project.title;
@@ -241,9 +249,13 @@ $(function(){
                 periodEl.textContent = `기간 | ${project.period}`;
                 contributionEl.textContent = `기여도 | ${project.contribution}`;
                 this.readMoreBtn.href = project.link;
-                
+
+                imageEl.src = project.image; // ✅ 이미지 경로 바꾸기
+                imageEl.alt = `${project.title} 이미지`; // 접근성
+
                 titleEl.style.opacity = '1';
                 descEl.style.opacity = '1';
+                imageEl.style.opacity = '1';
             }, 200);
         }
 

@@ -164,9 +164,11 @@ section.visual {width: 100%; height: 115vh;}
 .worklist-team .worklist-container .content-left .read-more:hover {background: #CEADB8; color: #fff;transform: translateX(10px);}
 .worklist-team .worklist-container .content-left .read-more::after {content: '→';margin-left: 10px;transition: transform 0.3s ease;}
 .worklist-team .worklist-container .content-left .read-more:hover::after {transform: translateX(5px);}
+
 .worklist-team .worklist-container .content-right {position: relative;width: 55%;display: flex;align-items: center;}
-.worklist-team .worklist-container .content-right .project-image-container {/* position: relative; */transform: perspective(1000px) rotateY(-10deg);}
-.worklist-team .worklist-container .content-right .project-image-container img {width: 100%; height: 70vh;}
+/* .worklist-team .worklist-container .content-right .project-image-container {position: relative;transform: perspective(1000px) rotateY(-10deg);} */
+/* .worklist-team .worklist-container .content-right .project-image-container {display: flex; width: 100%; transition: all 0.3s ease;} */
+.worklist-team .worklist-container .content-right .project-image-container img {width: 100%; height: 70vh; transition: opacity 0.3s ease;}
 .worklist-team .worklist-container .content-right .project-image.active {opacity: 1;}
 
 /* worklist-Clone */

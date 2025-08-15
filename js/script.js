@@ -117,8 +117,8 @@ $(function(){
     .fromTo('.hobby .inner span.d', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 1.9)
     .fromTo('.hobby .inner span.e', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 2.5)
     .fromTo('.hobby .inner span.f', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 3.1)
-    .fromTo('.hobby .inner span.g', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 3.7)
-    .fromTo('.hobby .inner span.h', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 4.3);
+    // .fromTo('.hobby .inner span.g', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 3.7)
+    // .fromTo('.hobby .inner span.h', { y: '400%' }, { y: '0', duration: 3,ease: "power2.out" }, 4.3);
 
     // hobby 텍스트 퍼짐 효과
     gsap.to(".text-wrapper .text-left", {
@@ -164,7 +164,7 @@ $(function(){
                     period: '2025. 05. 01 - 2025. 06. 31',
                     contribution: '디자인 60%',
                     link: '#subway-project',
-                    image: 'img/worklist-T_subway1.png',
+                    image: 'img/visual-T1.png',
                     alignment: 'center'
                 },
                 {
@@ -173,7 +173,7 @@ $(function(){
                     period: '2025. 06. 01 - 2025. 06. 30',
                     contribution: '디자인 80%',
                     link: '#tamburins-project',
-                    image: 'img/worklist-T_tamburins.png',
+                    image: 'img/visual-T2.png',
                     alignment: 'center'
                 },
                 {
@@ -182,7 +182,7 @@ $(function(){
                     period: '2025. 07. 01 - 2025. 07. 31',
                     contribution: '디자인 70%',
                     link: '#fandom-project',
-                    image: 'img/worklist-T_fandom1.png',
+                    image: 'img/visual-T3.png',
                     alignment: 'center'
                 }
             ];

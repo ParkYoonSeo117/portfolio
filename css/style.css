@@ -98,19 +98,94 @@ section.visual {width: 100%; height: 115vh;}
 .about-main .about-container .leftBox {width: 39%; height: auto;border-radius: 10px;overflow: hidden;position: relative; margin-right: 50px;}
 .about-main .about-container .leftBox img {width: 100%;height: 100%;object-fit: cover;}
 .about-main .about-container .rightBox {width: 50%; margin-top: 60px;}
-.about-main .about-container .rightBox .section-number {font-family: 'Inter', sans-serif;font-size: 14px;font-weight: 400;color: #999999;letter-spacing: 2px;text-transform: uppercase;margin-bottom: 60px;position: relative;}
-.about-main .about-container .rightBox .main-title {/* font-weight: 500; */ font-size: 45px;line-height: 1.1;color: #3c3c3c;margin-bottom: 48px;letter-spacing: -0.02em;}
+.about-main .about-container .rightBox .title-main {
+            font-weight: 600;
+            font-size: 68px;
+            color: #000;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
 
-.title-emphasis {font-style: italic;color: #CEADB8; }
-.about-main .about-container .rightBox .subtitle {/* font-family: 'Playfair Display', serif; */font-size: 20px;color: #444444;margin-bottom: 56px;line-height: 1.4;font-style: italic;}
-.about-main .about-container .rightBox .description {font-size: 18px;line-height: 1.8;color: #333333;margin-bottom: 64px;}
-.quote {font-weight: bold;color: #CEADB8;position: relative;}
-.quote::before {content: '"';font-size: 30px;color: #cccccc;position: absolute;left: -20px;top: -9px; }
-.divider {width: 80px;height: 1px;background: #111111; margin: 80px 0;}
-.details {display: flex;;gap: 130px;margin-top: 130px;}
-.detail-item {font-family: 'Inter', sans-serif;}
-.detail-label {font-size: 12px;font-weight: 500;color: #999999;text-transform: uppercase;letter-spacing: 1px;margin-bottom: 8px;}
-.detail-value {font-size: 16px;font-weight: 400;color: #111111;}
+        .about-main .about-container .rightBox .title-sub {
+            font-size: 48px;
+            
+            color: #333;
+            margin-bottom: 40px;
+            position: relative;
+            padding-bottom: 35px;
+        }
+
+        .about-main .about-container .rightBox .title-sub::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80%;
+            height: 1px;
+            background: #333;
+        }
+
+        .about-main .about-container .rightBox .text-primary {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #000;
+            margin-bottom: 12px;
+        }
+
+        .about-main .about-container .rightBox .text-secondary {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #777;
+            margin-bottom: 50px;
+        }
+
+        .about-main .about-container .rightBox .text-body {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #000;
+            margin-bottom: 24px;
+        }
+
+        /* 구분선 */
+        .about-main .about-container .rightBox .divider {
+            width: 70px;
+            height: 1px;
+            background: #000;
+            margin: 40px 0;
+        }
+
+        /* 워터마크 */
+        .about-main .about-container .rightBox .watermark {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            font-size: 12px;
+            font-weight: 300;
+            color: #bbb;
+            letter-spacing: 1px;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in.delay-1 { animation-delay: 0.1s; }
+        .fade-in.delay-2 { animation-delay: 0.2s; }
+        .fade-in.delay-3 { animation-delay: 0.3s; }
+        .fade-in.delay-4 { animation-delay: 0.4s; }
+        .fade-in.delay-5 { animation-delay: 0.5s; }
+        .fade-in.delay-6 { animation-delay: 0.6s; }
+        .fade-in.delay-7 { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
 /* About-Sub*/
 .about-sub {width: 100%; height: 110vh;}
@@ -139,7 +214,7 @@ section.visual {width: 100%; height: 115vh;}
 
 /* work-intro 4강 기초 참고 */
 .worklist-intro {width: 100%; height: 115vh; line-height: 1.1; text-align: center; padding-top: 30vh; box-sizing: border-box; background-color: #10100E; border-radius: 80px 80px 0 0;}
-.worklist-intro .title {font-size: 100px; padding-top: 100px; color: #CEADB8;}
+.worklist-intro .title {font-size: 100px; padding-top: 100px; color: #fff;}
 
 /* worklist-Team */
 .worklist-team {display: flex;align-items: center;position: relative;overflow: hidden; background-color: #10100E; width: 100%; height: 100vh;}
@@ -152,16 +227,38 @@ section.visual {width: 100%; height: 115vh;}
 .worklist-team .worklist-container .project-info {margin-bottom: 50px;}
 .worklist-team .worklist-container .project-info p {font-size: 16px;color: #b5b5b5;;margin-bottom: 8px;}
 .worklist-team .worklist-container .project-list {margin-bottom: 50px;border-left: 1px solid #aaa; padding: 0 25px;}
-.worklist-team .worklist-container .project-list .project-item {padding: 15px 0;cursor: pointer;transition: all 0.3s ease;display: flex;align-items: center;justify-content: space-between;color: #fff;}
-.worklist-team .worklist-container .project-list .project-item:hover {padding-left: 10px;}
-.worklist-team .worklist-container .project-list .project-item.active {color: #CEADB8; padding-left: 20px;}
-.worklist-team .worklist-container .project-list .project-item .project-number {font-size: 18px;color: #fff;margin-right: 15px;}
+/* 기존 코드에서 이 부분만 수정하세요 */
+.worklist-team .worklist-container .project-list .project-item {
+    padding: 15px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #818181; /* 기본 색상을 #818181로 변경 */
+}
+
+.worklist-team .worklist-container .project-list .project-item:hover {
+    padding-left: 10px;
+    color: #fff; /* 호버시 밝게 */
+}
+
+.worklist-team .worklist-container .project-list .project-item.active {
+    color: #fff; 
+    padding-left: 20px;
+}
+
+.worklist-team .worklist-container .project-list .project-item .project-number {
+    font-size: 18px;
+    color: inherit; /* 부모 색상 상속 */
+    margin-right: 15px;
+}
 .worklist-team .worklist-container .project-list .project-item .project-name {flex: 1;font-size: 18px;}
 .worklist-team .worklist-container .project-list .project-item .progress-bar {width: 60px;height: 2px;background: rgba(255, 255, 255, 0.2);border-radius: 2px;overflow: hidden;display: none;}
 /* 게이지바 보이게 변경시 display: block */
 .worklist-team .worklist-container .project-list .project-item .progress-fill {height: 100%;background: #fff;width: 0%;transition: width 0.1s ease;}
 .worklist-team .worklist-container .content-left .read-more {display: inline-flex;align-items: center;color: #fff;text-decoration: none;font-size: 16px;padding: 15px 30px;border: 1px solid rgba(255, 255, 255, 0.3);border-radius: 30px;transition: all 0.3s ease;}
-.worklist-team .worklist-container .content-left .read-more:hover {background: #CEADB8; color: #fff;transform: translateX(10px);}
+.worklist-team .worklist-container .content-left .read-more:hover {background: #fff; color: #000;transform: translateX(10px);}
 .worklist-team .worklist-container .content-left .read-more::after {content: '→';margin-left: 10px;transition: transform 0.3s ease;}
 .worklist-team .worklist-container .content-left .read-more:hover::after {transform: translateX(5px);}
 

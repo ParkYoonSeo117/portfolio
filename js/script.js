@@ -153,9 +153,11 @@ $(function(){
             this.projectSlides = document.querySelectorAll('.project-slide');
             this.progressBars = document.querySelectorAll('.progress-fill');
             this.readMoreBtn = document.querySelector('.read-more');
+            this.imageEl = document.querySelector('.project-image-container img'); // 이미지 요소 캐시
             this.autoSlideInterval = null;
             this.progressInterval = null;
             this.slideInterval = 5000; // 5초
+            this.isTransitioning = false; // 전환 중복 방지
             
             this.projects = [
                 {
@@ -191,21 +193,34 @@ $(function(){
         }
 
         init() {
+            this.preloadImages(); // 이미지 미리 로딩
             this.bindEvents();
-            this.startAutoSlide();
             this.updateContent(0);
+            this.startAutoSlide();
+        }
+
+        // 이미지 미리 로딩 (렉 방지)
+        preloadImages() {
+            this.projects.forEach(project => {
+                const img = new Image();
+                img.src = project.image;
+            });
         }
 
         bindEvents() {
             // 프로젝트 아이템 클릭 이벤트
             this.projectItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    this.changeProject(index);
+                    if (!this.isTransitioning) { // 전환 중복 방지
+                        this.changeProject(index);
+                    }
                 });
             });
         }
 
         changeProject(index) {
+            if (this.currentProject === index) return; // 같은 프로젝트면 무시
+            
             this.stopAutoSlide();
             this.currentProject = index;
             this.updateProject();
@@ -219,10 +234,12 @@ $(function(){
                 item.classList.toggle('active', index === this.currentProject);
             });
 
-            // 슬라이드 업데이트
-            this.projectSlides.forEach((slide, index) => {
-                slide.classList.toggle('active', index === this.currentProject);
-            });
+            // 슬라이드 업데이트 (있다면)
+            if (this.projectSlides.length > 0) {
+                this.projectSlides.forEach((slide, index) => {
+                    slide.classList.toggle('active', index === this.currentProject);
+                });
+            }
 
             // 프로그레스 바 초기화
             this.progressBars.forEach(bar => {
@@ -231,17 +248,32 @@ $(function(){
         }
 
         updateContent(index) {
+            if (this.isTransitioning) return; // 전환 중이면 무시
+            
+            this.isTransitioning = true;
             const project = this.projects[index];
             const titleEl = document.querySelector('.project-title');
             const descEl = document.querySelector('.project-desc');
             const periodEl = document.querySelector('.project-info p:first-child');
             const contributionEl = document.querySelector('.project-info p:last-child');
-            const imageEl = document.querySelector('.project-image-container img'); 
             
-            // 부드러운 전환 효과
+            // 빠른 이미지 전환 (opacity 없이 바로 변경)
+            if (this.imageEl && project.image) {
+                this.imageEl.style.opacity = '0.3'; // 살짝 흐리게
+                
+                // 이미지 로드 완료 후 부드럽게 전환
+                const newImg = new Image();
+                newImg.onload = () => {
+                    this.imageEl.src = project.image;
+                    this.imageEl.alt = `${project.title} 이미지`;
+                    this.imageEl.style.opacity = '1'; // 선명하게
+                };
+                newImg.src = project.image;
+            }
+            
+            // 텍스트 부드러운 전환
             titleEl.style.opacity = '0';
             descEl.style.opacity = '0';
-            imageEl.style.opacity = '0';
             
             setTimeout(() => {
                 titleEl.textContent = project.title;
@@ -250,13 +282,11 @@ $(function(){
                 contributionEl.textContent = `기여도 | ${project.contribution}`;
                 this.readMoreBtn.href = project.link;
 
-                imageEl.src = project.image; // ✅ 이미지 경로 바꾸기
-                imageEl.alt = `${project.title} 이미지`; // 접근성
-
                 titleEl.style.opacity = '1';
                 descEl.style.opacity = '1';
-                imageEl.style.opacity = '1';
-            }, 200);
+                
+                this.isTransitioning = false; // 전환 완료
+            }, 150); // 시간 단축 (200ms → 150ms)
         }
 
         startAutoSlide() {
@@ -268,7 +298,9 @@ $(function(){
             
             this.progressInterval = setInterval(() => {
                 progress += increment;
-                currentProgressBar.style.width = `${Math.min(progress, 100)}%`;
+                if (currentProgressBar) {
+                    currentProgressBar.style.width = `${Math.min(progress, 100)}%`;
+                }
                 
                 if (progress >= 100) {
                     clearInterval(this.progressInterval);

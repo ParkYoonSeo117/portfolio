@@ -65,7 +65,6 @@ $(function(){
 // });
 
 
-
     // <intro 가로스크롤> --------------------
     let sections = gsap.utils.toArray(".page");
     {
@@ -88,17 +87,7 @@ $(function(){
     };
 
     // <worklist-intro> --------------
-    gsap.timeline({
-        scrollTrigger:{
-            trigger:'.worklist-intro',
-            start:'0% 100%',
-            end:'0% 20%',
-            scrub:1,
-            // markers:true
-        }
-    })
-    .fromTo('.worklist-intro .title .a', {x:'-100%'},{x:'-0%', ease:'none', duration:5},0)
-    .fromTo('.worklist-intro .title .b', {x:'100%'},{x:'0%', ease:'none', duration:5},0)
+
 
     // <hobby> -------------------
     gsap.timeline({
@@ -163,7 +152,7 @@ $(function(){
                 {
                     title: 'Subway',
                     desc: '사용자 경험 개선을 목표로, 기존 웹의 복잡한 UI 구조와 비효율적인 플로우를 재설계했습니다. 전체 웹어플리케이션의 인 UI 시안, 브랜드 컬러와 사용성 모두를 고려한 디자인을 구성하였으며, 기획서 작성부터 최종 발표까지 주도적으로 참여하여 팀 내부로 발표를 진행하였습니다.',
-                    period: '2025. 05. 01 - 2025. 06. 31',
+                    period: '2025. 05. 01 - 2025. 05. 31',
                     contribution: '디자인 60%',
                     link: '#subway-project',
                     image: 'img/visual-T1.png',

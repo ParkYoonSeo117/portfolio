@@ -5,7 +5,7 @@
 /* reset */
 * {margin: 0;padding: 0; box-sizing: border-box;}
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
-h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal; font-size: inherit;}
 a {color: inherit; text-decoration: inherit;}
 img {vertical-align: middle;}
 a img {border: none;}
@@ -55,9 +55,9 @@ section.credit.show {transform: translateY(0);} */
 
 /* visual */
 section.visual {width: 100%; height: 115vh;}
-.main-text {text-align: center; padding-top: 70px;}
-.main-text .main-title {font-size: clamp(2.5rem, 10vw, 15rem); line-height: 1; margin-bottom: 60px;letter-spacing: -2px;}
-.main-text .sub-title {font-size: 18px; color: #666; margin-bottom: 16px;}
+section.visual .main-text {text-align: center; padding-top: 70px;}
+section.visual .main-text .main-title {font-size: clamp(2.5rem, 10vw, 15rem); line-height: 1; margin-bottom: 60px;letter-spacing: -2px;}
+section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-bottom: 16px;}
 .designer-info {font-size: 16px; color: #888;}
 .bottom-text {display: flex; justify-content: space-between; font-size: 18px; color: #999; padding-top: 30px;}
 .bottom-left, .bottom-right {line-height: 1.2;}
@@ -212,9 +212,58 @@ section.visual {width: 100%; height: 115vh;}
 .skill-list {padding: 8px 15px; border: 1px solid #ddd;border-radius: 50px;font-size: 16px;color: #555; cursor: pointer;}
 .skill-list:hover {background: #CEADB8; color: #fff; transition: all 0.3s ease;}
 
-/* work-intro 4강 기초 참고 */
-.worklist-intro {width: 100%; height: 115vh; line-height: 1.1; text-align: center; padding-top: 30vh; box-sizing: border-box; background-color: #10100E; border-radius: 80px 80px 0 0;}
-.worklist-intro .title {font-size: 100px; padding-top: 100px; color: #fff;}
+/* worklist-intro */
+.worklist-intro {
+            width: 100%; 
+            height: 115vh; 
+            line-height: 1.1; 
+            text-align: center; 
+            padding-top: 100px; 
+            box-sizing: border-box; 
+            background-color: #10100E;
+            position: relative; border-radius: 50px 50px 0 0;
+        }
+
+        .worklist-intro .title {margin-bottom: 60px;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding: 50px;
+        }
+        .worklist-intro .title::before {
+    content: '';
+    width: 14px; 
+    height: 14px; 
+    border-radius: 20px; 
+    position: absolute;
+    background: #fff; /* 색상도 추가 */
+    top: -45px; /* 위치 조정 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+        .worklist-intro .title .main-text {
+            font-size: clamp(120px, 15vw, 180px);
+            color: #fff; letter-spacing: 3px; font-weight: 300;
+        }
+
+        .worklist-intro .textBox {
+        display: flex; justify-content: space-between; color: #fff;
+        }
+
+        .worklist-intro .textBox .textBox-left {width: 40%; text-align: left; font-size: clamp(10px, 15vw, 30px);}
+        .worklist-intro .textBox .textBox-right {width: 36%; text-align: left;}
+        .worklist-intro .textBox h2 {
+            font-size: 32px;
+            line-height: 1.2;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .worklist-intro .textBox p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #888;
+        }
 
 /* worklist-Team */
 .worklist-team {display: flex;align-items: center;position: relative;overflow: hidden; background-color: #10100E; width: 100%; height: 100vh;}
@@ -227,7 +276,6 @@ section.visual {width: 100%; height: 115vh;}
 .worklist-team .worklist-container .project-info {margin-bottom: 50px;}
 .worklist-team .worklist-container .project-info p {font-size: 16px;color: #b5b5b5;;margin-bottom: 8px;}
 .worklist-team .worklist-container .project-list {margin-bottom: 50px;border-left: 1px solid #aaa; padding: 0 25px;}
-/* 기존 코드에서 이 부분만 수정하세요 */
 .worklist-team .worklist-container .project-list .project-item {
     padding: 15px 0;
     cursor: pointer;

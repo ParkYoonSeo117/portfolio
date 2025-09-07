@@ -40,7 +40,7 @@ header.dark .logo, header.dark .nav-menu a, header.dark .portfolio-text {color: 
 .container .innerheader .logo {font-size: 18px; color: #666;}
 .container .innerheader .nav-menu {display: flex; gap: 30px;}
 .container .innerheader .nav-menu a {color: #666; font-size: 14px; padding: 8px 16px;border: 1px solid #ddd; border-radius: 20px; transition: all 0.3s ease;}
-.container .innerheader .nav-menu a:hover {background-color: #CEADB8; color: #fff;}
+.container .innerheader .nav-menu a:hover {background-color: #10100E; color: #fff; border: none;}
 .container .innerheader .portfolio-text {font-size: 18px; color: #666;}
 
 /* credit */
@@ -77,7 +77,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 
 /* intro sub 1 */
 .intro-sub1 .images {display: flex; gap: 5vw; float: right;}
-.intro-sub1 .sub1-container .images img {width: 388px; height: 518px;}
+.intro-sub1 .sub1-container .images img {width: 388px; height: 518px; object-fit: cover; border-radius: 10px;}
 .intro-sub1 .text-box {width: 50%; position: absolute; bottom: 10%; left: 10%; text-align: left; align-items: center;}
 .intro-sub1 .text-box .title {font-size: 75px; line-height: 1.1; margin-bottom: 30px; letter-spacing: -3px;}
 /* .intro-sub1 .text-box .title h2 img {width: 80px; height: 80px; margin-bottom: 14px;} */
@@ -242,7 +242,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 }
 
         .worklist-intro .title .main-text {
-            font-size: clamp(120px, 15vw, 180px);
+            font-size: clamp(120px, 15vw, 150px);
             color: #fff; letter-spacing: 3px; font-weight: 300;
         }
 
@@ -317,24 +317,132 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .worklist-team .worklist-container .content-right .project-image.active {opacity: 1;}
 
 /* worklist-Clone */
-.worklist-clone {width: 100%;}
+.worklist-clone {background-color: #10100E;}
 .worklist-clone .headerBox {text-align: left;margin-bottom: 80px;}
-.worklist-clone .headerBox .project-tag {display: inline-block;padding: 10px 20px;border: 1px solid #000;border-radius: 25px;font-size: 18px;margin-bottom: 50px;color: #000; }
-.worklist-clone .headerBox .project-title {font-size: 4rem;margin-bottom: 50px; line-height: 1.1; color: #000;}
-.worklist-clone .headerBox .subtxt {font-size: 16px;color: #666;font-weight: 300;}
-.worklist-clone .worklist-grid {list-style: none;display: grid;grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));gap: 40px;padding: 0;}
-.worklist-clone .worklist-grid .worklist-Box {position: relative;background: #fff;border-radius: 12px;overflow: hidden;box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);transition: transform 0.3s ease, box-shadow 0.3s ease;}
-.worklist-Box:hover {transform: translateY(-8px);box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);}
-.clone-contents {position: relative;width: 100%;height: 300px;background: #e0e0e0;overflow: hidden;}
-.clone-contents img {width: 100%;height: 100%;object-fit: cover;transition: transform 0.3s ease;}
-.item-overlay {position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.7);display: flex;align-items: center;justify-content: center;opacity: 0;transition: opacity 0.3s ease;}
-.worklist-Box:hover .item-overlay {opacity: 1;}
-.worklist-Box:hover .clone-contents img {transform: scale(1.05);}
-.read-more-btn {background: #fff;color: #333;border: none;padding: 12px 24px;border-radius: 50px;font-size: 14px;font-weight: 500;cursor: pointer;transition: all 0.3s ease;text-decoration: none;display: inline-block;}
-.read-more-btn:hover {background: #CEADB8; transform: scale(1.05); color: #fff;}
-.worklist-clone .worklist-grid .worklist-Box .txtbox {padding: 25px;text-align: center;}
-.worklist-Box .txtbox .title {font-size: 18px;font-weight: 500;color: #333;margin-bottom: 8px; text-transform: uppercase;}
-.worklist-Box .txtbox .description {font-size: 14px;color: #666;line-height: 1.5;}
+.worklist-clone .headerBox .project-tag {display: inline-block;padding: 10px 20px;border: 1px solid #fff;border-radius: 25px;font-size: 18px;margin-bottom: 50px;color: #fff; }
+.worklist-clone .headerBox .project-title {font-size: 4rem;margin-bottom: 50px; line-height: 1.1; color: #fff;}
+.worklist-clone .headerBox .subtxt {font-size: 16px;color: #aaa;font-weight: 300;}
+
+/* ========== Grid ========== */
+.worklist-clone .worklist-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  list-style: none;
+}
+
+.worklist-clone .worklist-grid .worklist-Box {
+  background: #000;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer; 
+}
+
+/* 각 카드별 배경 */ 
+.worklist-Box .clone-contents { background: #2a2a2a; }
+
+/* ========== 이미지 컨텐츠 ========== */
+.worklist-Box .clone-contents {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  /* overflow: hidden; background: #fff; */
+}
+
+.worklist-Box .clone-contents img {
+  /* position: absolute;
+  top: 0; left: 0; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0;
+  visibility: hidden;
+  transform: rotateY(90deg); */
+  transition: all 0.6s ease;
+  /* z-index: 5; */
+}
+
+/* hover 시 이미지 등장 */
+.worklist-Box:hover .clone-contents img {
+  opacity: 1;
+  visibility: visible;
+  transform: rotateY(0deg);
+}
+
+/* ========== 텍스트 박스 ========== */
+.worklist-Box .txtbox {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  z-index: 10;
+}
+
+.worklist-Box .title {
+  letter-spacing: 0.1em;
+  color: #fff;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.worklist-Box .title::after {
+  content: '(2024)';
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.project-type {
+  font-size: 0.75rem;
+  color: #aaa;
+  letter-spacing: 0.1em;
+  margin-bottom: 4px;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #ccc;
+  font-weight: 300;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+/* ========== 오버레이 버튼 ========== */
+.item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+}
+
+.worklist-Box:hover .item-overlay {
+  opacity: 1;
+}
+
+.read-more-btn {
+  padding: 12px 28px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+}
 
 /* hobby */
 .hobby {position: relative; width: 100%;height: 100vh; background: #10100E;}

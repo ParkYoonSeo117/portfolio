@@ -324,123 +324,33 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .worklist-clone .headerBox .subtxt {font-size: 16px;color: #aaa;font-weight: 300;}
 
 /* ========== Grid ========== */
-.worklist-clone .worklist-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  list-style: none;
-}
-
-.worklist-clone .worklist-grid .worklist-Box {
-  background: #000;
-  height: 450px;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer; 
-}
+.worklist-clone .worklist-grid {display: grid;grid-template-columns: repeat(3, 1fr);gap: 1px;list-style: none;}
+.worklist-clone .worklist-grid .worklist-Box {background: #000;height: 450px;position: relative;overflow: hidden;cursor: pointer; }
 
 /* 각 카드별 배경 */ 
 .worklist-Box .clone-contents { background: #2a2a2a; }
 
 /* ========== 이미지 컨텐츠 ========== */
-.worklist-Box .clone-contents {
-  /* position: relative; */
-  width: 100%;
-  height: 100%;
-  /* overflow: hidden; background: #fff; */
-}
-
-.worklist-Box .clone-contents img {
-  /* position: absolute;
-  top: 0; left: 0; */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* opacity: 0;
-  visibility: hidden;
-  transform: rotateY(90deg); */
-  transition: all 0.6s ease;
-  /* z-index: 5; */
-}
+.worklist-Box .clone-contents {/* position: relative; */width: 100%;height: 100%;/* overflow: hidden; background: #fff; */}
+.worklist-Box .clone-contents img {/* position: absolute;top: 0; left: 0; */width: 100%;height: 100%;object-fit: cover;/* opacity: 0;visibility: hidden;transform: rotateY(90deg); */transition: all 0.6s ease;
+  /* z-index: 5; */}
 
 /* hover 시 이미지 등장 */
-.worklist-Box:hover .clone-contents img {
-  opacity: 1;
-  visibility: visible;
-  transform: rotateY(0deg);
-}
+.worklist-Box:hover .clone-contents img {opacity: 1;visibility: visible;transform: rotateY(0deg);}
 
 /* ========== 텍스트 박스 ========== */
-.worklist-Box .txtbox {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 24px 20px;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8));
-  z-index: 10;
-}
-
-.worklist-Box .title {
-  letter-spacing: 0.1em;
-  color: #fff;
-  margin-bottom: 8px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.worklist-Box .title::after {
-  content: '(2024)';
-  font-size: 0.85rem;
-  color: #ccc;
-}
-
-.project-type {
-  font-size: 0.75rem;
-  color: #aaa;
-  letter-spacing: 0.1em;
-  margin-bottom: 4px;
-}
-
-.description {
-  font-size: 0.8rem;
-  color: #ccc;
-  font-weight: 300;
-  line-height: 1.3;
-  text-transform: none;
-}
+.worklist-Box .txtbox {position: absolute;bottom: 0; left: 0; right: 0;padding: 24px 20px;background: linear-gradient(transparent, rgba(0,0,0,0.8));z-index: 10;}
+.worklist-Box .title {letter-spacing: 0.1em;color: #fff;margin-bottom: 8px;display: flex;justify-content: space-between;align-items: center;}
+.worklist-Box .title::after {content: '(2024)';font-size: 0.85rem;color: #ccc;}
+.project-type {font-size: 0.75rem;color: #aaa;letter-spacing: 0.1em;margin-bottom: 4px;}
+.description {font-size: 0.8rem;color: #ccc;font-weight: 300;line-height: 1.3;text-transform: none;}
 
 /* ========== 오버레이 버튼 ========== */
-.item-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 20;
-}
-
+.item-overlay {position: absolute;inset: 0;background: rgba(0,0,0,0.7);display: flex;align-items: center;justify-content: center;opacity: 0;transition: opacity 0.3s ease;z-index: 20;}
 .worklist-Box:hover .item-overlay {opacity: 1;}
+.read-more-btn {padding: 12px 28px;background: transparent;border: 1px solid #fff;color: #fff;border-radius: 25px;font-size: 0.85rem;letter-spacing: 0.05em;text-decoration: none;transition: all 0.3s ease;}
 
-.read-more-btn {
-  padding: 12px 28px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  border-radius: 25px;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.read-more-btn:hover {
-  background: #fff;
-  color: #000;
-  transform: translateY(-2px);
-}
+.read-more-btn:hover {background: #fff;color: #000;transform: translateY(-2px);}
 
 /* hobby */
 .hobby {position: relative; width: 100%;height: 100vh; background: #10100E;}

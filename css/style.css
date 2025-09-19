@@ -422,9 +422,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
   z-index: 20;
 }
 
-.worklist-Box:hover .item-overlay {
-  opacity: 1;
-}
+.worklist-Box:hover .item-overlay {opacity: 1;}
 
 .read-more-btn {
   padding: 12px 28px;

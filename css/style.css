@@ -71,7 +71,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .intro-main .text-box .title {font-size: 75px; margin-bottom: 75px; letter-spacing: -3px; line-height: 1.1;}
 .intro-main .text-box img {width: 25px;height: 25px; margin-bottom: 65px;}
 .intro-main .text-box .title h2:nth-child(2) {margin: 0 0 30px 200px;}
-.intro-main .text-box .desc, .intro-sub1 .text-box .desc, .intro-sub2 .text-box .desc  {font-size: 18px; line-height: 1.3; color: #aaa;}
+.intro-main .text-box .desc, .intro-sub1 .text-box .desc, .intro-sub2 .text-box .desc  {font-size: 19px; line-height: 1.3; color: #666;}
 /* .intro-main .img-box {width: 100%; height: 100%;} */
 .intro-main .img-box img {width: 584px; height: 735px; border-radius: 10px;}
 
@@ -79,17 +79,17 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .intro-sub1 .images {display: flex; gap: 5vw; float: right;}
 .intro-sub1 .sub1-container .images img {width: 388px; height: 518px; object-fit: cover; border-radius: 10px;}
 .intro-sub1 .text-box {width: 50%; position: absolute; bottom: 10%; left: 10%; text-align: left; align-items: center;}
-.intro-sub1 .text-box .title {font-size: 75px; line-height: 1.1; margin-bottom: 30px; letter-spacing: -3px;}
+.intro-sub1 .text-box .title {font-size: 75px; line-height: 1.1; margin-bottom: 50px; letter-spacing: -3px;}
 /* .intro-sub1 .text-box .title h2 img {width: 80px; height: 80px; margin-bottom: 14px;} */
 
 /* intro sub 2 */
-.intro-sub2 .sub2-container {position: relative; display: flex;}
+.intro-sub2 .sub2-container {position: relative; display: flex; justify-content: space-between;}
 /* .intro-sub2 .inner {width: 95%; height: 100vh; margin: 0 auto; padding: 70px 0;} */
-.intro-sub2 .text-box {width: 50%; margin-top: 8%;}
+.intro-sub2 .text-box {width: 50%; margin: 8%;}
 .intro-sub2 .text-box .title {font-size: 75px; margin-bottom: 75px; line-height: 1.2; letter-spacing: -3px;}
-.intro-sub2 .sub2-container .img-box {display: flex; margin-top: 5%;}
-.intro-sub2 .sub2-container .img-box:nth-child(1) {width: 500px; height: 537px;}
-.intro-sub2 .sub2-container .img-box:nth-child(2) {width: 440px; height: 515px;}
+.intro-sub2 .sub2-container .img-box img {width: 584px; height: 735px; border-radius: 10px; object-fit: cover;}
+/* .intro-sub2 .sub2-container .img-box:nth-child(1) {width: 500px; height: 537px;}
+.intro-sub2 .sub2-container .img-box:nth-child(2) {width: 440px; height: 515px;} */
 
 /* about */
 .about-main {width: 100%; height: 110vh;}
@@ -210,7 +210,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .skill-category {font-size: 17px;font-weight: 500;color: #333;min-width: 100px;margin: 0;padding-top: 5px;}
 .skill-lists {display: flex;flex-wrap: wrap;gap: 12px;flex: 1;}
 .skill-list {padding: 8px 15px; border: 1px solid #ddd;border-radius: 50px;font-size: 16px;color: #555; cursor: pointer;}
-.skill-list:hover {background: #CEADB8; color: #fff; transition: all 0.3s ease;}
+.skill-list:hover {background: #10100E; color: #fff; transition: all 0.3s ease;}
 
 /* worklist-intro */
 .worklist-intro {
@@ -221,7 +221,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
             padding-top: 100px; 
             box-sizing: border-box; 
             background-color: #10100E;
-            position: relative; border-radius: 50px 50px 0 0;
+            position: relative; border-radius: 10px 10px 0 0;
         }
 
         .worklist-intro .title {margin-bottom: 60px;
@@ -231,12 +231,12 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
         }
         .worklist-intro .title::before {
     content: '';
-    width: 14px; 
-    height: 14px; 
+    width: 12px; 
+    height: 12px; 
     border-radius: 20px; 
     position: absolute;
-    background: #fff; /* 색상도 추가 */
-    top: -45px; /* 위치 조정 */
+    background: #ccc;
+    top: -45px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -448,7 +448,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .hobby {position: relative; width: 100%;height: 100vh; background: #10100E;}
 .hobby .inner .text-wrapper {position: absolute;top: 50%;left: 50%;
 transform: translate(-50%, -50%);display: flex;align-items: center;gap: 2vw;z-index: -1;}
-.hobby .inner .text-wrapper .text-left, .hobby .inner .text-wrapper .text-right {font-size: 5vw;white-space: nowrap;transition: transform 0.5s ease; color: #CEADB8;}
+.hobby .inner .text-wrapper .text-left, .hobby .inner .text-wrapper .text-right {font-size: 5vw;white-space: nowrap;transition: transform 0.5s ease; color: #fff;}
 
 .hobby .inner span {position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);width: 500px;height: 540px;display: flex;align-items: center;justify-content: center; z-index: 15;}
 .hobby .inner span img {width: 100%;height: 100%;object-fit: cover;}
@@ -470,9 +470,9 @@ transform: translate(-50%, -50%);display: flex;align-items: center;gap: 2vw;z-in
 .faq-question {padding: 2rem;cursor: pointer;display: flex;justify-content: space-between;align-items: center;transition: background-color 0.3s ease;border: none;background: none;width: 100%;text-align: left;}
 .faq-question:hover {background-color: #f9f9f9;}
 .faq-question h3 {font-size: 1.2rem;color: #333;font-weight: 500;margin: 0;flex: 1;}
-.faq-icon {width: 24px;height: 24px;border-radius: 50%;background: #CEADB8;display: flex;align-items: center;justify-content: center;transition: transform 0.3s ease, background-color 0.3s ease;flex-shrink: 0;margin-left: 1rem;}
+.faq-icon {width: 24px;height: 24px;border-radius: 50%;background: #10100E;display: flex;align-items: center;justify-content: center;transition: transform 0.3s ease, background-color 0.3s ease;flex-shrink: 0;margin-left: 1rem;}
 .faq-icon::after {content: '+';color: #fff;font-size: 18px;font-weight: 300;transition: transform 0.3s ease;}
-.faq-item.active .faq-icon {background: #CEADB8;transform: rotate(45deg);}
+.faq-item.active .faq-icon {background: #10100E;transform: rotate(45deg);}
 .faq-answer {max-height: 0;overflow: hidden;transition: max-height 0.4s ease, padding 0.4s ease;background-color: #fafafa;}
 .faq-answer-content {padding: 0 2rem;}
 .faq-item.active .faq-answer {max-height: 300px;padding: 2rem 0;}
@@ -504,13 +504,13 @@ margin-bottom: 40px;opacity: 0;animation: fadeInUp 1s ease-out 0.2s forwards;}
 .sitemap {margin-bottom: 60px;opacity: 0;animation: fadeInUp 1s ease-out 0.8s forwards;}
 .sitemap-title {font-size: 0.9rem;font-weight: 300;text-transform: uppercase;letter-spacing: 0.1em;margin-bottom: 20px;}
 .sitemap-links {display: flex;flex-wrap: wrap;gap: 30px;}
-.sitemap-links a {color: #ffffff;text-decoration: none;font-size: 0.9rem;font-weight: 300;text-transform: uppercase;letter-spacing: 0.05em;transition: opacity 0.3s ease;}
+.sitemap-links a {color: #fff;text-decoration: none;font-size: 0.9rem;font-weight: 300;text-transform: uppercase;letter-spacing: 0.05em;transition: opacity 0.3s ease;}
 .sitemap-links a:hover {opacity: 0.6;}
 
 /* contact-title */
-.contact-title {font-size: clamp(4rem, 12vw, 12rem); color: #CEADB8;line-height: 0.85;margin: 100px 0;position: relative;opacity: 0;animation: fadeInUp 1.5s ease-out 1s forwards; cursor: pointer;font-style: italic;}
+.contact-title {font-size: clamp(4rem, 12vw, 12rem); color: #f9f9f9;line-height: 0.85;margin: 100px 0;position: relative;opacity: 0;animation: fadeInUp 1.5s ease-out 1s forwards; cursor: pointer;font-style: italic;}
 .contact-title::after {content: '';position: absolute;bottom: -20px;left: 0;width: 300px;
-height: 1px;background-color: #ffffff;opacity: 0;animation: expandLine 1s ease-out 1.5s forwards;}
+height: 1px;background-color: #fff;opacity: 0;animation: expandLine 1s ease-out 1.5s forwards;}
 
 /* Contact Info Section */
 .contact-Box {display: grid;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));gap: 80px;margin-bottom: 60px;}
@@ -519,9 +519,9 @@ height: 1px;background-color: #ffffff;opacity: 0;animation: expandLine 1s ease-o
 .contact-Box .contact-group:nth-child(2) { animation: fadeInUp 1s ease-out 2s forwards; }
 .contact-Box .contact-group:nth-child(3) { animation: fadeInUp 1s ease-out 2.2s forwards; }
 .contact-Box .contact-group:nth-child(4) { animation: fadeInUp 1s ease-out 2.4s forwards; }
-.contact-Box .contact-group .contact-label {font-size: 0.9rem;font-weight: 300;margin-bottom: 12px;color: #cccccc;}
+.contact-Box .contact-group .contact-label {font-size: 0.9rem;font-weight: 300;margin-bottom: 12px;color: #ccc;}
 .contact-Box .contact-group.contact-info {font-size: 1rem;font-weight: 300;line-height: 1.5;}
-.contact-Box .contact-group .contact-info a {color: #ffffff;text-decoration: none;transition: opacity 0.3s ease;}
+.contact-Box .contact-group .contact-info a {color: #fff;text-decoration: none;transition: opacity 0.3s ease;}
 .contact-Box .contact-group .contact-info a:hover {opacity: 0.6;}
 
 /* Footer */

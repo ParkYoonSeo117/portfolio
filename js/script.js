@@ -135,188 +135,141 @@ $(function(){
 }); // ----------------
 
     // <worklist-team> ----------------
-    class WorklistTeam {
-        constructor() {
-            this.currentProject = 0;
-            this.projectItems = document.querySelectorAll('.project-item');
-            this.projectSlides = document.querySelectorAll('.project-slide');
-            this.progressBars = document.querySelectorAll('.progress-fill');
-            this.readMoreBtn = document.querySelector('.read-more');
-            this.imageEl = document.querySelector('.project-image-container img'); // 이미지 요소 캐시
-            this.autoSlideInterval = null;
-            this.progressInterval = null;
-            this.slideInterval = 5000; // 5초
-            this.isTransitioning = false; // 전환 중복 방지
-            
-            this.projects = [
-                {
-                    title: 'Subway',
-                    desc: '사용자 경험 개선을 목표로, 기존 웹의 복잡한 UI 구조와 비효율적인 플로우를 재설계했습니다. 전체 웹어플리케이션의 인 UI 시안, 브랜드 컬러와 사용성 모두를 고려한 디자인을 구성하였으며, 기획서 작성부터 최종 발표까지 주도적으로 참여하여 팀 내부로 발표를 진행하였습니다.',
-                    period: '2025. 05. 01 - 2025. 05. 31',
-                    contribution: '디자인 60%',
-                    link: '#subway-project',
-                    image: 'img/visual-T1.png',
-                    alignment: 'center'
-                },
-                {
-                    title: 'Tamburins',
-                    desc: '감각적인 브랜드 이미지에 비해 UI 구성과 사용자 흐름이 제한적이었던 기존 웹사이트를, 감성적 브랜딩은 유지하면서 UX 사용성을 강화하는 방향으로 리디자인하였고, 포토샵과 일러스트레이터 등의 툴을 적극 활용해 일관된 비주얼 아이덴티티와 사용자 친화적인 레이아웃을 구현하였습니다.',
-                    period: '2025. 06. 01 - 2025. 06. 30',
-                    contribution: '디자인 80%',
-                    link: '#tamburins-project',
-                    image: 'img/visual-T2.png',
-                    alignment: 'center'
-                },
-                {
-                    title: 'Fandom App',
-                    desc: '팬덤 커뮤니티의 니즈를 반영한 모바일 플랫폼 기획 및 UI 설계 프로젝트 입니다. 앱 구조 정의와 메인 사용자 흐름 구성, 스타일 가이드와 화면 시안 제작을 중심으로 참여하였고, 브랜드 무드와 사용자 편의성 모두를 고려한 디자인을 구현하며, 디자인 전담 역할을 수행했습니다.',
-                    period: '2025. 07. 01 - 2025. 07. 31',
-                    contribution: '디자인 70%',
-                    link: '#fandom-project',
-                    image: 'img/visual-T3.png',
-                    alignment: 'center'
-                }
-            ];
-
-            this.init();
+    // 팀 프로젝트 슬라이더 - 간단 버전
+const TeamProjectSlider = {
+    currentProject: 0,
+    totalProjects: 3,
+    autoInterval: null,
+    
+    // 프로젝트 데이터
+    projects: [
+        {
+            title: 'Subway',
+            desc: '사용자 경험 개선을 목표로, 기존 웹의 복잡한 UI 구조와 비효율적인 플로우를 재설계했습니다. 전체 웹어플리케이션의 인 UI 시안, 브랜드 컬러와 사용성 모두를 고려한 디자인을 구성하였으며, 기획서 작성부터 최종 발표까지 주도적으로 참여하여 팀 내부로 발표를 진행하였습니다.',
+            period: '2025. 05. 01 - 2025. 05. 31',
+            contribution: '디자인 60%',
+            link: 'https://www.figma.com/design/rvXr2QLvLZU3xKP0zuN55h/T-Project_SUBWAY?node-id=0-1&t=y0rmE3y1HPzz8axh-1',
+            image: 'img/visual-T1.png'
+        },
+        {
+            title: 'Tamburins',
+            desc: '감각적인 브랜드 이미지에 비해 UI 구성과 사용자 흐름이 제한적이었던 기존 웹사이트를, 감성적 브랜딩은 유지하면서 UX 사용성을 강화하는 방향으로 리디자인하였고, 포토샵과 일러스트레이터 등의 툴을 적극 활용해 일관된 비주얼 아이덴티티와 사용자 친화적인 레이아웃을 구현하였습니다.',
+            period: '2025. 06. 01 - 2025. 06. 30',
+            contribution: '디자인 80%',
+            link: 'https://parkyoonseo117.github.io/Tamburins/',
+            image: 'img/visual-T2.png'
+        },
+        {
+            title: 'Fandom App',
+            desc: '팬덤 커뮤니티의 니즈를 반영한 모바일 플랫폼 기획 및 UI 설계 프로젝트 입니다. 앱 구조 정의와 메인 사용자 흐름 구성, 스타일 가이드와 화면 시안 제작을 중심으로 참여하였고, 브랜드 무드와 사용자 편의성 모두를 고려한 디자인을 구현하며, 디자인 전담 역할을 수행했습니다.',
+            period: '2025. 07. 01 - 2025. 07. 31',
+            contribution: '디자인 70%',
+            link: 'https://loopin-six.vercel.app/',
+            image: 'img/visual-T3.png'
         }
+    ],
 
-        init() {
-            this.preloadImages(); // 이미지 미리 로딩
-            this.bindEvents();
-            this.updateContent(0);
-            this.startAutoSlide();
-        }
+    // 초기화
+    init() {
+        this.bindEvents();
+        this.updateProject(0);
+        this.startAuto();
+    },
 
-        // 이미지 미리 로딩 (렉 방지)
-        preloadImages() {
-            this.projects.forEach(project => {
-                const img = new Image();
-                img.src = project.image;
+    // 이벤트 바인딩
+    bindEvents() {
+        // 프로젝트 클릭
+        document.querySelectorAll('.project-item').forEach((item, index) => {
+            item.addEventListener('click', () => this.goTo(index));
+        });
+
+        // Read More 버튼 클릭
+        const readMoreBtn = document.querySelector('.read-more');
+        if (readMoreBtn) {
+            readMoreBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentLink = this.projects[this.currentProject].link;
+                window.open(currentLink, '_blank');
             });
         }
 
-        bindEvents() {
-            // 프로젝트 아이템 클릭 이벤트
-            this.projectItems.forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    if (!this.isTransitioning) { // 전환 중복 방지
-                        this.changeProject(index);
-                    }
-                });
-            });
+        // 마우스 호버시 자동슬라이드 정지/재개
+        const section = document.querySelector('.worklist-team');
+        if (section) {
+            section.addEventListener('mouseenter', () => this.stopAuto());
+            section.addEventListener('mouseleave', () => this.startAuto());
         }
+    },
 
-        changeProject(index) {
-            if (this.currentProject === index) return; // 같은 프로젝트면 무시
-            
-            this.stopAutoSlide();
-            this.currentProject = index;
-            this.updateProject();
-            this.updateContent(index);
-            this.startAutoSlide();
-        }
+    // 프로젝트 업데이트
+    updateProject(index) {
+        this.currentProject = index;
+        const project = this.projects[index];
 
-        updateProject() {
-            // 활성화된 프로젝트 아이템 업데이트
-            this.projectItems.forEach((item, index) => {
-                item.classList.toggle('active', index === this.currentProject);
-            });
+        // active 클래스 업데이트
+        document.querySelectorAll('.project-item').forEach((item, i) => {
+            item.classList.toggle('active', i === index);
+        });
 
-            // 슬라이드 업데이트 (있다면)
-            if (this.projectSlides.length > 0) {
-                this.projectSlides.forEach((slide, index) => {
-                    slide.classList.toggle('active', index === this.currentProject);
-                });
-            }
+        // 프로젝트 정보 업데이트
+        const title = document.querySelector('.project-title');
+        const desc = document.querySelector('.project-desc');
+        const infoParagraphs = document.querySelectorAll('.project-info p');
+        const image = document.querySelector('.project-image-container img');
 
-            // 프로그레스 바 초기화
-            this.progressBars.forEach(bar => {
-                bar.style.width = '0%';
-            });
-        }
+        if (title) title.textContent = project.title;
+        if (desc) desc.textContent = project.desc;
+        if (infoParagraphs[0]) infoParagraphs[0].textContent = `기간 | ${project.period}`;
+        if (infoParagraphs[1]) infoParagraphs[1].textContent = `기여도 | ${project.contribution}`;
+        if (image) image.src = project.image;
+    },
 
-        updateContent(index) {
-            if (this.isTransitioning) return; // 전환 중이면 무시
-            
-            this.isTransitioning = true;
-            const project = this.projects[index];
-            const titleEl = document.querySelector('.project-title');
-            const descEl = document.querySelector('.project-desc');
-            const periodEl = document.querySelector('.project-info p:first-child');
-            const contributionEl = document.querySelector('.project-info p:last-child');
-            
-            // 빠른 이미지 전환 (opacity 없이 바로 변경)
-            if (this.imageEl && project.image) {
-                this.imageEl.style.opacity = '0.3'; // 살짝 흐리게
-                
-                // 이미지 로드 완료 후 부드럽게 전환
-                const newImg = new Image();
-                newImg.onload = () => {
-                    this.imageEl.src = project.image;
-                    this.imageEl.alt = `${project.title} 이미지`;
-                    this.imageEl.style.opacity = '1'; // 선명하게
-                };
-                newImg.src = project.image;
-            }
-            
-            // 텍스트 부드러운 전환
-            titleEl.style.opacity = '0';
-            descEl.style.opacity = '0';
-            
-            setTimeout(() => {
-                titleEl.textContent = project.title;
-                descEl.textContent = project.desc;
-                periodEl.textContent = `기간 | ${project.period}`;
-                contributionEl.textContent = `기여도 | ${project.contribution}`;
-                this.readMoreBtn.href = project.link;
+    // 특정 프로젝트로 이동
+    goTo(index) {
+        this.stopAuto();
+        this.updateProject(index);
+        this.startAuto();
+    },
 
-                titleEl.style.opacity = '1';
-                descEl.style.opacity = '1';
-                
-                this.isTransitioning = false; // 전환 완료
-            }, 150); // 시간 단축 (200ms → 150ms)
-        }
+    // 자동 슬라이드 시작
+    startAuto() {
+        this.stopAuto();
+        console.log('자동 슬라이드 시작'); // 디버깅용
+        this.autoInterval = setInterval(() => {
+            const next = (this.currentProject + 1) % this.totalProjects;
+            console.log(`${this.currentProject} → ${next}번 프로젝트로 이동`); // 디버깅용
+            this.updateProject(next);
+        }, 5000);
+    },
 
-        startAutoSlide() {
-            this.stopAutoSlide();
-            
-            const currentProgressBar = this.progressBars[this.currentProject];
-            let progress = 0;
-            const increment = 100 / (this.slideInterval / 50);
-            
-            this.progressInterval = setInterval(() => {
-                progress += increment;
-                if (currentProgressBar) {
-                    currentProgressBar.style.width = `${Math.min(progress, 100)}%`;
-                }
-                
-                if (progress >= 100) {
-                    clearInterval(this.progressInterval);
-                    this.nextProject();
-                }
-            }, 50);
-        }
-
-        stopAutoSlide() {
-            if (this.progressInterval) {
-                clearInterval(this.progressInterval);
-                this.progressInterval = null;
-            }
-        }
-
-        nextProject() {
-            this.currentProject = (this.currentProject + 1) % this.projects.length;
-            this.updateProject();
-            this.updateContent(this.currentProject);
-            this.startAutoSlide();
+    // 자동 슬라이드 정지
+    stopAuto() {
+        if (this.autoInterval) {
+            clearInterval(this.autoInterval);
+            this.autoInterval = null;
         }
     }
+};
 
-    // 페이지 로드 후 초기화
-    document.addEventListener('DOMContentLoaded', () => {
-        new WorklistTeam();
-    });
+// DOM 로드후 실행
+document.addEventListener('DOMContentLoaded', () => {
+    // 섹션이 존재하는지 먼저 확인
+    const worklistSection = document.querySelector('.worklist-team');
+    if (worklistSection) {
+        console.log('팀 프로젝트 섹션 찾음, 슬라이더 시작');
+        TeamProjectSlider.init();
+    } else {
+        console.log('팀 프로젝트 섹션을 찾을 수 없음');
+        // 약간의 딜레이 후 다시 시도
+        setTimeout(() => {
+            const worklistSection = document.querySelector('.worklist-team');
+            if (worklistSection) {
+                console.log('딜레이 후 팀 프로젝트 섹션 찾음, 슬라이더 시작');
+                TeamProjectSlider.init();
+            }
+        }, 1000);
+    }
+});
 
     //<faq> ----------------------
     function toggleFAQ(button) {

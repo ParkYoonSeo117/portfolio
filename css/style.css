@@ -61,11 +61,11 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .intro-main .text-box .title h2:nth-child(2) {margin: 0 0 30px 200px;}
 .intro-main .text-box .desc, .intro-sub1 .text-box .desc, .intro-sub2 .text-box .desc  {font-size: 19px; line-height: 1.3; color: #666;}
 /* .intro-main .img-box {width: 100%; height: 100%;} */
-.intro-main .img-box img {width: 584px; height: 735px; border-radius: 10px;}
+.intro-main .img-box img {width: 584px; height: 735px; border-radius: 10px; object-fit: cover; object-position: bottom; transition: filter 0.6s ease;}
 
 /* intro sub 1 */
 .intro-sub1 .images {display: flex; gap: 5vw; float: right;}
-.intro-sub1 .sub1-container .images img {width: 388px; height: 518px; object-fit: cover; border-radius: 10px;}
+.intro-sub1 .sub1-container .images img {width: 388px; height: 518px; object-fit: cover; object-position: bottom; border-radius: 10px; transition: filter 0.6s ease;}
 .intro-sub1 .text-box {width: 50%; position: absolute; bottom: 10%; left: 10%; text-align: left; align-items: center;}
 .intro-sub1 .text-box .title {font-size: 75px; line-height: 1.1; margin-bottom: 50px; letter-spacing: -3px;}
 /* .intro-sub1 .text-box .title h2 img {width: 80px; height: 80px; margin-bottom: 14px;} */
@@ -75,9 +75,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 /* .intro-sub2 .inner {width: 95%; height: 100vh; margin: 0 auto; padding: 70px 0;} */
 .intro-sub2 .text-box {width: 50%; margin: 8%;}
 .intro-sub2 .text-box .title {font-size: 75px; margin-bottom: 75px; line-height: 1.2; letter-spacing: -3px;}
-.intro-sub2 .sub2-container .img-box img {width: 584px; height: 735px; border-radius: 10px; object-fit: cover;}
-/* .intro-sub2 .sub2-container .img-box:nth-child(1) {width: 500px; height: 537px;}
-.intro-sub2 .sub2-container .img-box:nth-child(2) {width: 440px; height: 515px;} */
+.intro-sub2 .sub2-container .img-box img {width: 584px; height: 735px; border-radius: 10px; object-fit: cover; object-position: bottom; transition: filter 0.6s ease;}
 
 /* about */
 .about-main {width: 100%; height: 110vh;}
@@ -121,7 +119,7 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 
 /* About-Sub*/
 .about-sub {width: 100%; height: 110vh;}
-.about-sub .inner {padding: 90px 0;}
+.about-sub .inner {padding: 100px 0;}
 .about-sub .about-container2 {display: flex;}
 .about-sub .about-container2 .leftBox {flex: 1;}
 .about-container2 .leftBox .title {font-size: 32px;color: #333; font-style: italic;}
@@ -145,13 +143,45 @@ section.visual .main-text .sub-title {font-size: 18px; color: #666; margin-botto
 .skill-list:hover {background: #10100E; color: #fff; transition: all 0.3s ease;}
 
 /* worklist-intro */
-.worklist-intro {width: 100%; height: 115vh; line-height: 1.1; text-align: center; padding-top: 100px; box-sizing: border-box; background-color: #10100E;position: relative; }
+.worklist-intro {width: 100%; height: 115vh; line-height: 1.1; text-align: center; padding-top: 100px; box-sizing: border-box; background-color: #10100E;position: relative;   opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;}
+    .worklist-intro.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .worklist-intro .title {margin-bottom: 60px;text-align: center;position: relative;border-top: 1px solid #fff; border-bottom: 1px solid #fff; padding: 50px;}
 .worklist-intro .title::before {content: '';width: 12px; height: 12px; border-radius: 20px; position: absolute;background: #ccc;top: -45px;left: 50%;transform: translateX(-50%);}
 .worklist-intro .title .main-text {font-size: clamp(120px, 15vw, 150px);color: #fff; letter-spacing: 3px; font-weight: 300;}
 .worklist-intro .textBox {display: flex; justify-content: space-between; color: #fff;}
 .worklist-intro .textBox .textBox-left {width: 40%; text-align: left; font-size: clamp(10px, 15vw, 30px);}
 .worklist-intro .textBox .textBox-right {width: 36%; text-align: left;}
+/* 각 요소별 순차 애니메이션 (선택사항) */
+.worklist-intro .title,
+.worklist-intro .textBox-left,
+.worklist-intro .textBox-right {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.worklist-intro.visible .title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.worklist-intro.visible .textBox-left {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.worklist-intro.visible .textBox-right {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
 .worklist-intro .textBox h2 {font-size: 32px;line-height: 1.2;margin-bottom: 30px;color: #fff;}
 .worklist-intro .textBox p {font-size: 16px;line-height: 1.6;color: #888;}
 
@@ -230,34 +260,174 @@ transform: translate(-50%, -50%);display: flex;align-items: center;gap: 2vw;z-in
 .hobby .inner span.g {transform: translate(-50%,-50%) rotate(12deg);}
 
 /* faq */
-.faq {width: 100%; height: 110vh;padding: 80px 2rem;}
-.faq-title {font-size: 3rem; font-weight: normal;color: #333;text-align: center;margin-bottom: 2rem;}
-.faq-subtxt {font-size: 1rem;color: #aaa; font-weight: normal;text-align: center;margin-bottom: 3rem;}
-.faq-container {display: flex; flex-direction: column;gap: 1.5rem; width: 50%; margin: 0 25%;}
-.faq-item {background: white;border-radius: 8px;overflow: hidden;box-shadow: 0 2px 10px rgba(0,0,0,0.05);transition: all 0.3s ease;}
-.faq-item:hover {box-shadow: 0 4px 20px rgba(0,0,0,0.1);}
-.faq-question {padding: 2rem;cursor: pointer;display: flex;justify-content: space-between;align-items: center;transition: background-color 0.3s ease;border: none;background: none;width: 100%;text-align: left;}
-.faq-question:hover {background-color: #f9f9f9;}
-.faq-question h3 {font-size: 1.2rem;color: #333;font-weight: 500;margin: 0;flex: 1;}
-.faq-icon {width: 24px;height: 24px;border-radius: 50%;background: #10100E;display: flex;align-items: center;justify-content: center;transition: transform 0.3s ease, background-color 0.3s ease;flex-shrink: 0;margin-left: 1rem;}
-.faq-icon::after {content: '+';color: #fff;font-size: 18px;font-weight: 300;transition: transform 0.3s ease;}
-.faq-item.active .faq-icon {background: #10100E;transform: rotate(45deg);}
-.faq-answer {max-height: 0;overflow: hidden;transition: max-height 0.4s ease, padding 0.4s ease;background-color: #fafafa;}
-.faq-answer-content {padding: 0 2rem;}
-.faq-item.active .faq-answer {max-height: 300px;padding: 2rem 0;}
-.faq-answer p {color: #666;font-size: 1rem;line-height: 1.7;margin: 0;font-weight: 300;}
-/* 애니메이션 */
-.faq-item {opacity: 0;transform: translateY(20px);animation: fadeInUp 0.6s ease-out forwards;}
-.faq-item:nth-child(1) { animation-delay: 0.1s; }
-.faq-item:nth-child(2) { animation-delay: 0.2s; }
-.faq-item:nth-child(3) { animation-delay: 0.3s; }
-.faq-item:nth-child(4) { animation-delay: 0.4s; }
+.faq {
+    width: 100%; 
+    height: 110vh;
+    padding: 80px 2rem;   
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.faq.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.faq .faq-title,
+.faq .faq-subtxt,
+.faq-container .faq-item {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.faq.visible .faq-title {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.faq.visible .faq-subtxt {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.faq.visible .faq-container .faq-item:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+}
+
+.faq.visible .faq-container .faq-item:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.faq.visible .faq-container .faq-item:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+}
+
+.faq.visible .faq-container .faq-item:nth-child(4) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+.faq-title {
+    font-size: 3rem; 
+    font-weight: normal;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.faq-subtxt {
+    font-size: 1rem;
+    color: #aaa; 
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.faq-container {
+    display: flex; 
+    flex-direction: column;
+    gap: 1.5rem; 
+    width: 50%; 
+    margin: 0 25%;
+}
+
+.faq-item {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    /* animation 부분 삭제! */
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.faq-question {
+    padding: 2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-question:hover {
+    background-color: #f9f9f9;
+}
+
+.faq-question h3 {
+    font-size: 1.2rem;
+    color: #333;
+    font-weight: 500;
+    margin: 0;
+    flex: 1;
+}
+
+.faq-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #10100E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.faq-icon::after {
+    content: '+';
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    background: #10100E;
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    background-color: #fafafa;
+}
+
+.faq-answer-content {
+    padding: 0 2rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 2rem 0;
+}
+
+.faq-answer p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin: 0;
+    font-weight: 300;
 }
 
 /* contact */
